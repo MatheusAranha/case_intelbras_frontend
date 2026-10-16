@@ -1,0 +1,46 @@
+.publish-csv {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.publish-csv h2 {
+  margin: 0 0 4px;
+}
+
+.publish-csv__hint {
+  margin: 0;
+  font-size: 14px;
+  color: var(--text);
+  max-width: 48ch;
+}
+
+.publish-csv__action {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.publish-csv__action button {
+  padding: 8px 16px;
+  font: inherit;
+  cursor: pointer;
+}
+
+.publish-csv__success {
+  margin: 0;
+  font-size: 14px;
+  color: #16a34a;
+}
+
+.publish-csv__error {
+  margin: 0;
+  font-size: 14px;
+  color: #dc2626;
+}

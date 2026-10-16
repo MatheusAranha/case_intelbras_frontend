@@ -1,8 +1,12 @@
 # case_intelbras_frontend
 
 A simple frontend for the [case_intelbras_kafka_java](https://github.com/MatheusAranha/case_intelbras_kafka_java)
-backend — the Intelbras Backend Sênior case. Two things, both live:
+backend — the Intelbras Backend Sênior case. Three things, all live:
 
+- **Publish CSV** — a button that calls `POST /events/simulate`, publishing the
+  backend's bundled sample dataset (100 real events + 4 synthetic DLQ demo rows) to
+  Kafka. The backend's own `run.sh` no longer does this automatically — this button (or
+  `curl -X POST http://localhost:8080/events/simulate`) is how you seed data.
 - **Audit timeline** — polls `GET /audits` every 3 seconds (no loading flicker after
   the first load), showing the most recent events as colored pins (one color per
   `EventCategory`). Click a pin for its full detail: device, category, event type,

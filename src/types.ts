@@ -32,3 +32,7 @@ export interface RandomEventStreamStatus {
   requestedCount: number
   publishedCount: number
 }
+
+export interface SimulationResult {
+  publishedCount: number
+}

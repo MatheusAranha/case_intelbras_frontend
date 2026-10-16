@@ -1,4 +1,4 @@
-import type { AuditRecord, RandomEventStreamConfig, RandomEventStreamStatus } from './types'
+import type { AuditRecord, RandomEventStreamConfig, RandomEventStreamStatus, SimulationResult } from './types'
 
 async function json<T>(response: Response): Promise<T> {
   if (!response.ok) {
@@ -10,6 +10,10 @@ async function json<T>(response: Response): Promise<T> {
 
 export function fetchAudits(): Promise<AuditRecord[]> {
   return fetch('/audits').then(json<AuditRecord[]>)
+}
+
+export function publishCsv(): Promise<SimulationResult> {
+  return fetch('/events/simulate', { method: 'POST' }).then(json<SimulationResult>)
 }
 
 export function fetchRandomStreamStatus(): Promise<RandomEventStreamStatus> {
